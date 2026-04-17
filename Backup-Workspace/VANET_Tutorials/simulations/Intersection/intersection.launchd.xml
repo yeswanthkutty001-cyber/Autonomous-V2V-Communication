@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <copy file="intersection.net.xml"/>
+    <copy file="intersection.rou.xml"/>
+    <copy file="intersection.poly.xml"/>
+    
+    <basedir path="."/>
+    
+    <seed value="1"/>
+    
+    <config>
+        <net-file value="intersection.net.xml"/>
+        <route-files value="intersection.rou.xml"/>
+        <additional-files value="intersection.poly.xml"/>
+        
+        <begin value="0"/>
+        <end value="200"/>
+        <step-length value="0.1"/>
+        
+        <!-- CRITICAL: Disable SUMO collision avoidance -->
+        <collision.action value="warn"/>
+        <collision.check-junctions value="false"/>
+        <collision.mingap-factor value="0"/>
+        <collision.stoptime value="0"/>
+        
+        <!-- Disable automatic collision prevention -->
+        <no-internal-links value="false"/>
+        <time-to-teleport value="-1"/>
+        <time-to-teleport.highways value="-1"/>
+        
+        <!-- Disable traffic lights -->
+        <tls.all-off value="true"/>
+        
+        <!-- Remote port for Veins -->
+        <remote-port value="9999"/>
+        
+        <!-- Logging -->
+        <verbose value="true"/>
+        <no-warnings value="false"/>
+        <collision-output value="collisions.xml"/>
+    </config>
+</launch>

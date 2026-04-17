@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obstacles>
+    <!-- Building at northeast corner blocking line of sight -->
+    <poly id="building_ne" type="building" color="150,150,150" fill="1" 
+          shape="10.0,10.0 40.0,10.0 40.0,40.0 10.0,40.0">
+        <param key="height" value="15.0"/>
+    </poly>
+    
+    <!-- Optional: Additional building at southeast corner -->
+    <poly id="building_se" type="building" color="150,150,150" fill="1" 
+          shape="10.0,-40.0 40.0,-40.0 40.0,-10.0 10.0,-10.0">
+        <param key="height" value="15.0"/>
+    </poly>
+</obstacles>

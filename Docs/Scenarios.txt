@@ -1,0 +1,21 @@
+A. Collision Avoidance
+	Warn drivers if another vehicle is approaching at high speed.
+	Alert if a vehicle suddenly brakes.
+
+B. Intersection Safety
+	Avoid crashes at junctions even when visibility is limited.
+
+C. Lane-Change Assistance
+	Check if a vehicle in the blind spot is approaching fast.
+
+D. Forward Collision Warning
+	If the vehicle ahead suddenly slows down.
+
+E. Emergency Vehicle Notification
+	Police, ambulance, and fire trucks send alerts (e.g., siren coming).
+
+F. Cooperative Adaptive Cruise Control (CACC)
+	Platooning of vehicles to improve fuel efficiency.
+
+G. Hazard Information Sharing
+	Slippery road ahead, potholes, fog, accident zones.

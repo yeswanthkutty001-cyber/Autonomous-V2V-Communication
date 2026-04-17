@@ -1,0 +1,4360 @@
+version 3
+run General-0-20260130-03:03:44-2258
+attr configname General
+attr datetime 20260130-03:03:44
+attr datetimef 20260130-030344
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 2258
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../../inet/images:../../../../../veins/images
+config network Scenario
+config sim-time-limit 60s
+config debug-on-errors true
+config cmdenv-express-mode true
+config image-path ../../../../images
+config Scenario.node[*].numUdpApps 1
+config Scenario.node[*].udpApp[0].typename UDPBasicApp
+config Scenario.node[*].udpApp[0].destAddresses "\"224.0.0.1\""
+config Scenario.node[*].udpApp[0].multicastInterface "\"wlan0\""
+config Scenario.node[*].udpApp[0].joinLocalMulticastGroups true
+config Scenario.node[*].udpApp[0].localPort 9001
+config Scenario.node[*].udpApp[0].destPort 9001
+config Scenario.node[*].udpApp[0].messageLength 100B
+config Scenario.node[*].udpApp[0].startTime "uniform(0s, 5s)"
+config Scenario.node[*].udpApp[0].sendInterval 5s
+config Scenario.node[*].wlan[0].mgmtType "\"Ieee80211MgmtAdhoc\""
+config Scenario.node[*].wlan[0].bitrate 6Mbps
+config Scenario.node[*].wlan[0].radio.transmitter.power 2mW
+config Scenario.node[*].ac_wlan.interfaces "\"wlan0\""
+config Scenario.node[*].ac_wlan.mcastGroups "\"224.0.0.1\""
+config Scenario.node[*].mobilityType "\"VeinsInetMobility\""
+config Scenario.node[*].mobility.constraintAreaMinX 0m
+config Scenario.node[*].mobility.constraintAreaMinY 0m
+config Scenario.node[*].mobility.constraintAreaMinZ 0m
+config Scenario.node[*].mobility.constraintAreaMaxX 1000m
+config Scenario.node[*].mobility.constraintAreaMaxY 1000m
+config Scenario.node[*].mobility.constraintAreaMaxZ 0m
+config Scenario.manager.updateInterval 0.1s
+config Scenario.manager.host "\"localhost\""
+config Scenario.manager.port 9999
+config Scenario.manager.autoShutdown true
+config Scenario.manager.launchConfig "xmldoc(\"square.launchd.xml\")"
+config Scenario.manager.moduleType "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Car\""
+config **.vector-recording true
+
+par Scenario.radioMedium.propagation typename "\"inet.physicallayer.wireless.common.propagation.ConstantSpeedPropagation\""
+par Scenario.radioMedium.propagation propagationSpeed 2.99792e+08mps
+attr unit mps
+par Scenario.radioMedium.propagation ignoreMovementDuringTransmission true
+par Scenario.radioMedium.propagation ignoreMovementDuringPropagation true
+par Scenario.radioMedium.propagation ignoreMovementDuringReception true
+scalar Scenario.radioMedium.propagation "Arrival computation count" 362
+par Scenario.radioMedium.analogModel typename "\"inet.physicallayer.wireless.common.analogmodel.packetlevel.ScalarAnalogModel\""
+par Scenario.radioMedium.analogModel ignorePartialInterference false
+par Scenario.radioMedium.backgroundNoise typename "\"inet.physicallayer.wireless.common.backgroundnoise.IsotropicScalarBackgroundNoise\""
+par Scenario.radioMedium.backgroundNoise power -110dBm
+attr unit dBm
+par Scenario.radioMedium.backgroundNoise bandwidth "nan Hz"
+attr unit Hz
+par Scenario.radioMedium.pathLoss typename "\"inet.physicallayer.wireless.common.pathloss.FreeSpacePathLoss\""
+par Scenario.radioMedium.pathLoss alpha 2
+par Scenario.radioMedium.pathLoss systemLoss 0dB
+attr unit dB
+par Scenario.radioMedium.mediumLimitCache typename "\"inet.physicallayer.wireless.common.medium.MediumLimitCache\""
+par Scenario.radioMedium.mediumLimitCache centerFrequency 2.4e+09Hz
+attr unit Hz
+par Scenario.radioMedium.mediumLimitCache maxSpeed "nan mps"
+attr unit mps
+par Scenario.radioMedium.mediumLimitCache maxTransmissionPower "nan W"
+attr unit W
+par Scenario.radioMedium.mediumLimitCache minInterferencePower -110dBm
+attr unit dBm
+par Scenario.radioMedium.mediumLimitCache minReceptionPower -85dBm
+attr unit dBm
+par Scenario.radioMedium.mediumLimitCache maxAntennaGain 0dB
+attr unit dB
+par Scenario.radioMedium.mediumLimitCache minInterferenceTime 1e-12s
+attr unit s
+par Scenario.radioMedium.mediumLimitCache maxTransmissionDuration 0.01s
+attr unit s
+par Scenario.radioMedium.mediumLimitCache maxCommunicationRange "nan m"
+attr unit m
+par Scenario.radioMedium.mediumLimitCache maxInterferenceRange "nan m"
+attr unit m
+par Scenario.radioMedium.communicationCache typename "\"inet.physicallayer.wireless.common.communicationcache.VectorCommunicationCache\""
+par Scenario.radioMedium typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium\""
+par Scenario.radioMedium physicalEnvironmentModule "\"physicalEnvironment\""
+par Scenario.radioMedium signalAnalogRepresentation "\"scalar\""
+attr enum unitDisk,scalar,dimensional
+par Scenario.radioMedium rangeFilter "\"\""
+par Scenario.radioMedium radioModeFilter false
+par Scenario.radioMedium listeningFilter false
+par Scenario.radioMedium macAddressFilter false
+par Scenario.radioMedium recordTransmissionLog false
+par Scenario.radioMedium recordReceptionLog false
+scalar Scenario.radioMedium "transmission count" 220
+scalar Scenario.radioMedium "signal send count" 362
+scalar Scenario.radioMedium "reception computation count" 362
+scalar Scenario.radioMedium "interference computation count" 1312
+scalar Scenario.radioMedium "reception decision computation count" 0
+scalar Scenario.radioMedium "listening decision computation count" 950
+scalar Scenario.radioMedium "reception cache hit" 75
+attr unit %
+scalar Scenario.radioMedium "interference cache hit" -nan
+attr unit %
+scalar Scenario.radioMedium "noise cache hit" -nan
+attr unit %
+scalar Scenario.radioMedium "snir cache hit" -nan
+attr unit %
+scalar Scenario.radioMedium "reception decision cache hit" -nan
+attr unit %
+scalar Scenario.radioMedium "reception result cache hit" -nan
+attr unit %
+par Scenario.manager typename "\"vanet_tutorials.veins_inet.VeinsInetManager\""
+par Scenario.manager connectAt 0s
+attr unit s
+par Scenario.manager firstStepAt -1s
+attr unit s
+par Scenario.manager updateInterval 0.1s
+attr unit s
+par Scenario.manager moduleType "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Car\""
+par Scenario.manager moduleName "\"node\""
+par Scenario.manager moduleDisplayString "\"*='i=veins/node/car;is=vs'\""
+par Scenario.manager trafficLightModuleType "\"\""
+par Scenario.manager trafficLightModuleName "\"tls\""
+par Scenario.manager trafficLightFilter "\"\""
+par Scenario.manager trafficLightModuleDisplayString "\"i=veins/node/trafficlight;is=vs\""
+par Scenario.manager host "\"localhost\""
+par Scenario.manager port 9999
+par Scenario.manager seed -1
+par Scenario.manager autoShutdown true
+par Scenario.manager margin 25
+par Scenario.manager roiRoads "\"\""
+par Scenario.manager roiRects "\"\""
+par Scenario.manager penetrationRate 1
+par Scenario.manager ignoreGuiCommands false
+par Scenario.manager order -1
+par Scenario.manager ignoreUnknownSubscriptionResults false
+par Scenario.manager launchConfig "<launch>...</launch> at /home/yeswanth_kutty/omnetpp-6.0.2/workspace/VANET_Tutorials/simulations/veins_inet3/examples/veins_inet//square.launchd.xml:34"
+scalar Scenario.manager roiArea 0
+par Scenario.node[0].radioIn[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].mobility typename "\"inet.mobility.static.StationaryMobility\""
+par Scenario.node[0].mobility subjectModule "\"^\""
+par Scenario.node[0].mobility coordinateSystemModule "\"\""
+par Scenario.node[0].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par Scenario.node[0].mobility updateDisplayString true
+par Scenario.node[0].mobility constraintAreaMinX 0m
+attr unit m
+par Scenario.node[0].mobility constraintAreaMinY 0m
+attr unit m
+par Scenario.node[0].mobility constraintAreaMinZ 0m
+attr unit m
+par Scenario.node[0].mobility constraintAreaMaxX 1000m
+attr unit m
+par Scenario.node[0].mobility constraintAreaMaxY 1000m
+attr unit m
+par Scenario.node[0].mobility constraintAreaMaxZ 0m
+attr unit m
+par Scenario.node[0].mobility initialX 548.814m
+attr unit m
+par Scenario.node[0].mobility initialY 592.845m
+attr unit m
+par Scenario.node[0].mobility initialZ 0m
+attr unit m
+par Scenario.node[0].mobility initialLatitude "nan deg"
+attr unit deg
+par Scenario.node[0].mobility initialLongitude "nan deg"
+attr unit deg
+par Scenario.node[0].mobility initialAltitude 0m
+attr unit m
+par Scenario.node[0].mobility initialHeading 0deg
+attr unit deg
+par Scenario.node[0].mobility initialElevation 0deg
+attr unit deg
+par Scenario.node[0].mobility initialBank 0deg
+attr unit deg
+par Scenario.node[0].mobility initFromDisplayString true
+par Scenario.node[0].mobility updateFromDisplayString true
+par Scenario.node[0].interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par Scenario.node[0].interfaceTable displayAddresses false
+par Scenario.node[0].cb typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].cb displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].cb forwardServiceRegistration true
+par Scenario.node[0].cb forwardProtocolRegistration true
+par Scenario.node[0].bl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].bl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].bl forwardServiceRegistration true
+par Scenario.node[0].bl forwardProtocolRegistration true
+par Scenario.node[0].li typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].li displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].li forwardServiceRegistration true
+par Scenario.node[0].li forwardProtocolRegistration true
+par Scenario.node[0].lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par Scenario.node[0].lo[0].lo interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].lo[0].lo mtu 4470B
+attr unit B
+scalar Scenario.node[0].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Scenario.node[0].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Scenario.node[0].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Scenario.node[0].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+par Scenario.node[0].lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par Scenario.node[0].lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[0].lo[0] recordPcap false
+par Scenario.node[0].lo[0] numPcapRecorders 0
+par Scenario.node[0].lo[0] interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+scalar Scenario.node[0].lo[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[0].lo[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[0].lo[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[0].lo[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[0].wlan[0].radioIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].wlan[0].llc.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].wlan[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].wlan[0].mib typename "\"inet.linklayer.ieee80211.mib.Ieee80211Mib\""
+par Scenario.node[0].wlan[0].llc typename "\"inet.linklayer.ieee80211.llc.Ieee80211LlcLpd\""
+par Scenario.node[0].wlan[0].llc registerProtocol false
+par Scenario.node[0].wlan[0].agent typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta\""
+par Scenario.node[0].wlan[0].agent interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].wlan[0].agent mibModule "\"Scenario.node[0].wlan[0].mib\""
+par Scenario.node[0].wlan[0].agent activeScan true
+par Scenario.node[0].wlan[0].agent channelsToScan "\"\""
+par Scenario.node[0].wlan[0].agent probeDelay 0.1s
+attr unit s
+par Scenario.node[0].wlan[0].agent minChannelTime 0.15s
+attr unit s
+par Scenario.node[0].wlan[0].agent maxChannelTime 0.3s
+attr unit s
+par Scenario.node[0].wlan[0].agent authenticationTimeout 5s
+attr unit s
+par Scenario.node[0].wlan[0].agent associationTimeout 5s
+attr unit s
+par Scenario.node[0].wlan[0].agent startingTime -1s
+attr unit s
+par Scenario.node[0].wlan[0].agent defaultSsid "\"SSID\""
+scalar Scenario.node[0].wlan[0].agent dropConfirm:count 93
+attr recordingmode count
+attr title "dropped confirms, count"
+scalar Scenario.node[0].wlan[0].agent acceptConfirm:count 0
+attr recordingmode count
+attr title "accepted confirms, count"
+scalar Scenario.node[0].wlan[0].agent sentRequest:count 94
+attr recordingmode count
+attr title "sent requests, count"
+par Scenario.node[0].wlan[0].mgmt typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta\""
+par Scenario.node[0].wlan[0].mgmt interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].wlan[0].mgmt numChannels 1
+par Scenario.node[0].wlan[0].mgmt mibModule "\"Scenario.node[0].wlan[0].mib\""
+par Scenario.node[0].wlan[0].mgmt macModule "\"Scenario.node[0].wlan[0].mac\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue typename "\"inet.linklayer.ieee80211.mac.queue.PendingQueue\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetCapacity 100
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue dataCapacity -1b
+attr unit b
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue comparatorClass "\"inet::ieee80211::MgmtOverDataComparator\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue bufferModule "\"\""
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:last 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:last 256
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:max 256
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 93
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	93
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPackets:count 93
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:sum 23808
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:histogram
+field count 93
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 23808
+field sqrsum 6094848
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	93
+bin	257	0
+statistic Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPackets:count 94
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:sum 24064
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:histogram
+field count 94
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 24064
+field sqrsum 6160384
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	94
+bin	257	0
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames typename "\"inet.linklayer.ieee80211.mac.queue.InProgressFrames\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames pendingQueueModule "\"^.pendingQueue\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames originatorMacDataServiceModule "\"^.^.originatorMacDataService\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames ackHandlerModule "\"^.^.ackHandler\""
+statistic Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 93
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.003534
+field sqrsum 1.34292e-07
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetDequeued)
+attr title "queueing times"
+bin	-inf	0
+bin	0	93
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, max"
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00014972495523672
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, timeavg"
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention typename "\"inet.linklayer.ieee80211.mac.contention.Contention\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention initialChannelBusy true
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffOptimization true
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 93
+attr recordingmode count
+attr title "channel access granted, count"
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention stateChanged:count 750
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr recordingmode count
+attr title "contention state changed, count"
+attr type enum
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess typename "\"inet.linklayer.ieee80211.mac.channelaccess.Dcaf\""
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess difsn -1
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess cwMin -1
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess cwMax -1
+par Scenario.node[0].wlan[0].mac.dcf.channelAccess rxModule "\"^.^.rx\""
+scalar Scenario.node[0].wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 186
+attr interpolationmode sample-hold
+attr recordingmode count
+attr title "channel ownership, count"
+par Scenario.node[0].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy typename "\"inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy fragmentationThreshold 1500B
+attr unit B
+par Scenario.node[0].wlan[0].mac.dcf.originatorMacDataService typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService\""
+scalar Scenario.node[0].wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr recordingmode count
+attr title "packets aggregated, count"
+scalar Scenario.node[0].wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr recordingmode count
+attr title "packets fragmented, count"
+par Scenario.node[0].wlan[0].mac.dcf.recipientMacDataService typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService\""
+scalar Scenario.node[0].wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr recordingmode count
+attr title "packets deaggregated, count"
+scalar Scenario.node[0].wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 0
+attr recordingmode count
+attr title "packets defragmented, count"
+scalar Scenario.node[0].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[0].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection typename "\"inet.linklayer.ieee80211.mac.rateselection.RateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection rateControlModule "\"^.rateControl\""
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection multicastFrameBitrate -1bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection responseAckFrameBitrate -1bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection responseCtsFrameBitrate -1bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection dataFrameBitrate 6e+06bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection dataFrameBandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection dataFrameNumSpatialStreams -1
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection mgmtFrameBitrate -1bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.rateSelection controlFrameBitrate -1bps
+attr unit bps
+par Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure typename "\"inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure\""
+par Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure cwCalculatorModule "\"^.channelAccess\""
+par Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure rtsPolicyModule "\"^.rtsPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure shortRetryLimit 7
+par Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure longRetryLimit 4
+scalar Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr recordingmode count
+attr title "retry limit reached, count"
+par Scenario.node[0].wlan[0].mac.dcf.originatorProtectionMechanism typename "\"inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism\""
+par Scenario.node[0].wlan[0].mac.dcf.originatorProtectionMechanism rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf.ackHandler typename "\"inet.linklayer.ieee80211.mac.originator.AckHandler\""
+par Scenario.node[0].wlan[0].mac.dcf.originatorAckPolicy typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.originatorAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf.originatorAckPolicy ackTimeout -1s
+attr unit s
+par Scenario.node[0].wlan[0].mac.dcf.recipientAckPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.recipientAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf.rtsPolicy typename "\"inet.linklayer.ieee80211.mac.originator.RtsPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.rtsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf.rtsPolicy ctsTimeout -1s
+attr unit s
+par Scenario.node[0].wlan[0].mac.dcf.rtsPolicy rtsThreshold 2346B
+attr unit B
+par Scenario.node[0].wlan[0].mac.dcf.ctsPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.CtsPolicy\""
+par Scenario.node[0].wlan[0].mac.dcf.ctsPolicy rxModule "\"^.^.rx\""
+par Scenario.node[0].wlan[0].mac.dcf.ctsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[0].wlan[0].mac.dcf typename "\"inet.linklayer.ieee80211.mac.coordinationfunction.Dcf\""
+par Scenario.node[0].wlan[0].mac.dcf rxModule "\"^.rx\""
+par Scenario.node[0].wlan[0].mac.dcf txModule "\"^.tx\""
+scalar Scenario.node[0].wlan[0].mac.dcf frameSequenceFinished:count 93
+attr recordingmode count
+attr title "finished frame sequences, count"
+statistic Scenario.node[0].wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 93
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.003534
+field sqrsum 1.34292e-07
+attr recordingmode histogram
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations"
+bin	-inf	0
+bin	0	93
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic Scenario.node[0].wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 93
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 93
+field sqrsum 93
+attr recordingmode histogram
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets"
+bin	-inf	0
+bin	0	0
+bin	1	93
+bin	2	0
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeer:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeer:count 93
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 2976
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerMulticast:count 93
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 2976
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerBroadcast:count 93
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 2976
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 93
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 2976
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[0].wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[0].wlan[0].mac.ds typename "\"inet.linklayer.ieee80211.mac.Ds\""
+par Scenario.node[0].wlan[0].mac.ds mibModule "\"Scenario.node[0].wlan[0].mib\""
+par Scenario.node[0].wlan[0].mac.rx typename "\"inet.linklayer.ieee80211.mac.Rx\""
+par Scenario.node[0].wlan[0].mac.tx typename "\"inet.linklayer.ieee80211.mac.Tx\""
+par Scenario.node[0].wlan[0].mac.tx rxModule "\"^.rx\""
+par Scenario.node[0].wlan[0].mac typename "\"inet.linklayer.ieee80211.mac.Ieee80211Mac\""
+par Scenario.node[0].wlan[0].mac interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].wlan[0].mac mibModule "\"Scenario.node[0].wlan[0].mib\""
+par Scenario.node[0].wlan[0].mac modeSet "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[0].wlan[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[0].wlan[0].mac initialRadioMode "\"receiver\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[0].wlan[0].mac mtu 2304B
+attr unit B
+par Scenario.node[0].wlan[0].mac qosStation false
+scalar Scenario.node[0].wlan[0].mac packetReceivedFromLower:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from lower layer, count"
+scalar Scenario.node[0].wlan[0].mac packetReceivedFromLower:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetSentToLower:count 93
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to lower layer, count"
+scalar Scenario.node[0].wlan[0].mac packetSentToLower:sum(packetBytes) 2976
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from upper layer, count"
+scalar Scenario.node[0].wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to upper layer, count"
+scalar Scenario.node[0].wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[0].wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar Scenario.node[0].wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[0].wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[0].wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[0].wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[0].wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar Scenario.node[0].wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[0].wlan[0].radio.antenna typename "\"inet.physicallayer.wireless.common.antenna.IsotropicAntenna\""
+par Scenario.node[0].wlan[0].radio.antenna mobilityModule "\"^.^.^.mobility\""
+par Scenario.node[0].wlan[0].radio.antenna numAntennas 1
+par Scenario.node[0].wlan[0].radio.transmitter typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter\""
+par Scenario.node[0].wlan[0].radio.transmitter preambleDuration -1s
+attr unit s
+par Scenario.node[0].wlan[0].radio.transmitter headerLength 192b
+attr unit b
+par Scenario.node[0].wlan[0].radio.transmitter bitrate 6e+06bps
+attr unit bps
+par Scenario.node[0].wlan[0].radio.transmitter power 0.002W
+attr unit W
+par Scenario.node[0].wlan[0].radio.transmitter centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[0].wlan[0].radio.transmitter bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[0].wlan[0].radio.transmitter codeRate 1
+par Scenario.node[0].wlan[0].radio.transmitter modulation "\"BPSK\""
+par Scenario.node[0].wlan[0].radio.transmitter opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[0].wlan[0].radio.transmitter bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[0].wlan[0].radio.transmitter channelNumber 0
+par Scenario.node[0].wlan[0].radio.receiver.errorModel typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel\""
+par Scenario.node[0].wlan[0].radio.receiver.errorModel corruptionMode "\"packet\""
+attr enum packet,chunk,byte,bit
+par Scenario.node[0].wlan[0].radio.receiver.errorModel snirMode "\"min\""
+attr enum min,mean
+par Scenario.node[0].wlan[0].radio.receiver.errorModel snirOffset 0dB
+attr unit dB
+par Scenario.node[0].wlan[0].radio.receiver typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver\""
+par Scenario.node[0].wlan[0].radio.receiver snirThreshold 4dB
+attr unit dB
+par Scenario.node[0].wlan[0].radio.receiver snirThresholdMode "\"min\""
+attr enum min,mean
+par Scenario.node[0].wlan[0].radio.receiver energyDetection -85dBm
+attr unit dBm
+par Scenario.node[0].wlan[0].radio.receiver sensitivity -85dBm
+attr unit dBm
+par Scenario.node[0].wlan[0].radio.receiver centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[0].wlan[0].radio.receiver bandwidth 2.2e+07Hz
+attr unit Hz
+par Scenario.node[0].wlan[0].radio.receiver modulation "\"BPSK\""
+par Scenario.node[0].wlan[0].radio.receiver opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[0].wlan[0].radio.receiver bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[0].wlan[0].radio.receiver channelNumber 0
+par Scenario.node[0].wlan[0].radio typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio\""
+par Scenario.node[0].wlan[0].radio radioMediumModule "\"radioMedium\""
+par Scenario.node[0].wlan[0].radio energySourceModule "\"\""
+par Scenario.node[0].wlan[0].radio initialRadioMode "\"off\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[0].wlan[0].radio switchingTimes "\"ms 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\""
+par Scenario.node[0].wlan[0].radio sendRawBytes false
+par Scenario.node[0].wlan[0].radio separateTransmissionParts false
+par Scenario.node[0].wlan[0].radio separateReceptionParts false
+par Scenario.node[0].wlan[0].radio displayCommunicationRange false
+par Scenario.node[0].wlan[0].radio displayInterferenceRange false
+par Scenario.node[0].wlan[0].radio centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[0].wlan[0].radio bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[0].wlan[0].radio signalAnalogRepresentation "\"scalar\""
+attr enum scalar,dimensional
+par Scenario.node[0].wlan[0].radio opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[0].wlan[0].radio bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[0].wlan[0].radio channelNumber 0
+par Scenario.node[0].wlan[0].radio crcMode "\"declared\""
+attr enum declared,computed
+statistic Scenario.node[0].wlan[0].radio radioChannel:histogram
+field count 95
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr recordingmode histogram
+attr source radioChannelChanged
+attr title "Radio channel"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	95
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[0].wlan[0].radio radioMode:count 189
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Scenario.node[0].wlan[0].radio receptionState:count 187
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Scenario.node[0].wlan[0].radio transmissionState:count 372
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Scenario.node[0].wlan[0].radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[0].wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[0].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[0].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+par Scenario.node[0].wlan[0] typename "\"inet.linklayer.ieee80211.Ieee80211Interface\""
+par Scenario.node[0].wlan[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[0].wlan[0] recordPcap false
+par Scenario.node[0].wlan[0] numPcapRecorders 0
+par Scenario.node[0].wlan[0] interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].wlan[0] energySourceModule "\"\""
+par Scenario.node[0].wlan[0] opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[0].wlan[0] address "\"0A-AA-00-00-00-01\""
+attr mutable ""
+par Scenario.node[0].wlan[0] protocol "\"\""
+par Scenario.node[0].wlan[0] bitrate 6e+06bps
+attr unit bps
+scalar Scenario.node[0].wlan[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[0].wlan[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[0].wlan[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[0].wlan[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[0].ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].ipv4.ifIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[0].ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par Scenario.node[0].ipv4.configurator interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.configurator routingTableModule "\"Scenario.node[0].ipv4.routingTable\""
+par Scenario.node[0].ipv4.configurator networkConfiguratorModule "\"configurator\""
+par Scenario.node[0].ipv4.configurator configureRoutingTable true
+par Scenario.node[0].ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par Scenario.node[0].ipv4.routingTable interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.routingTable routerId "\"auto\""
+par Scenario.node[0].ipv4.routingTable netmaskRoutes "\"*\""
+par Scenario.node[0].ipv4.routingTable forwarding false
+par Scenario.node[0].ipv4.routingTable multicastForwarding false
+par Scenario.node[0].ipv4.routingTable useAdminDist false
+par Scenario.node[0].ipv4.routingTable routingFile "\"\""
+par Scenario.node[0].ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par Scenario.node[0].ipv4.natTable networkProtocolModule "\"^.ip\""
+par Scenario.node[0].ipv4.natTable config "<config/> at content:1"
+par Scenario.node[0].ipv4.up typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].ipv4.up forwardServiceRegistration true
+par Scenario.node[0].ipv4.up forwardProtocolRegistration true
+par Scenario.node[0].ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par Scenario.node[0].ipv4.igmp interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.igmp routingTableModule "\"Scenario.node[0].ipv4.routingTable\""
+par Scenario.node[0].ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[0].ipv4.igmp enabled true
+par Scenario.node[0].ipv4.igmp robustnessVariable 2
+par Scenario.node[0].ipv4.igmp queryInterval 125s
+attr unit s
+par Scenario.node[0].ipv4.igmp queryResponseInterval 10s
+attr unit s
+par Scenario.node[0].ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par Scenario.node[0].ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par Scenario.node[0].ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par Scenario.node[0].ipv4.igmp startupQueryCount 2
+par Scenario.node[0].ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par Scenario.node[0].ipv4.igmp lastMemberQueryCount 2
+par Scenario.node[0].ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par Scenario.node[0].ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par Scenario.node[0].ipv4.icmp interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.icmp routingTableModule "\"Scenario.node[0].ipv4.routingTable\""
+par Scenario.node[0].ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par Scenario.node[0].ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par Scenario.node[0].ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].ipv4.mp forwardServiceRegistration true
+par Scenario.node[0].ipv4.mp forwardProtocolRegistration true
+par Scenario.node[0].ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par Scenario.node[0].ipv4.ip interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.ip routingTableModule "\"Scenario.node[0].ipv4.routingTable\""
+par Scenario.node[0].ipv4.ip arpModule "\"Scenario.node[0].ipv4.arp\""
+par Scenario.node[0].ipv4.ip icmpModule "\"Scenario.node[0].ipv4.icmp\""
+par Scenario.node[0].ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[0].ipv4.ip timeToLive 32
+par Scenario.node[0].ipv4.ip multicastTimeToLive 32
+par Scenario.node[0].ipv4.ip fragmentTimeout 60s
+attr unit s
+par Scenario.node[0].ipv4.ip limitedBroadcast false
+par Scenario.node[0].ipv4.ip directBroadcastInterfaces "\"\""
+scalar Scenario.node[0].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Scenario.node[0].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Scenario.node[0].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Scenario.node[0].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Scenario.node[0].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Scenario.node[0].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Scenario.node[0].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par Scenario.node[0].ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par Scenario.node[0].ipv4.arp interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4.arp routingTableModule "\"Scenario.node[0].ipv4.routingTable\""
+par Scenario.node[0].ipv4.arp retryTimeout 1s
+attr unit s
+par Scenario.node[0].ipv4.arp retryCount 3
+par Scenario.node[0].ipv4.arp cacheTimeout 120s
+attr unit s
+par Scenario.node[0].ipv4.arp proxyArpInterfaces "\"\""
+scalar Scenario.node[0].ipv4.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar Scenario.node[0].ipv4.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar Scenario.node[0].ipv4.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar Scenario.node[0].ipv4.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar Scenario.node[0].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar Scenario.node[0].ipv4.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar Scenario.node[0].ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par Scenario.node[0].ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].ipv4.lp forwardServiceRegistration true
+par Scenario.node[0].ipv4.lp forwardProtocolRegistration true
+par Scenario.node[0].ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par Scenario.node[0].ipv4 forwarding false
+par Scenario.node[0].ipv4 multicastForwarding false
+par Scenario.node[0].ipv4 interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].ipv4 displayStringTextFormat "\"%i\""
+par Scenario.node[0].nl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].nl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].nl forwardServiceRegistration true
+par Scenario.node[0].nl forwardProtocolRegistration true
+par Scenario.node[0].udp typename "\"inet.transportlayer.udp.Udp\""
+par Scenario.node[0].udp interfaceTableModule "\"Scenario.node[0].interfaceTable\""
+par Scenario.node[0].udp icmpModule "\"^.ipv4.icmp\""
+par Scenario.node[0].udp icmpv6Module "\"^.ipv6.icmpv6\""
+par Scenario.node[0].udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par Scenario.node[0].udp defaultMulticastLoop true
+scalar Scenario.node[0].udp packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar Scenario.node[0].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[0].udp packetSent:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar Scenario.node[0].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[0].udp passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Scenario.node[0].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Scenario.node[0].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+par Scenario.node[0].tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par Scenario.node[0].tcp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[0].tcp advertisedWindow 7504
+par Scenario.node[0].tcp delayedAcksEnabled false
+par Scenario.node[0].tcp nagleEnabled true
+par Scenario.node[0].tcp limitedTransmitEnabled false
+par Scenario.node[0].tcp increasedIWEnabled false
+par Scenario.node[0].tcp sackSupport false
+par Scenario.node[0].tcp windowScalingSupport false
+par Scenario.node[0].tcp windowScalingFactor -1
+par Scenario.node[0].tcp timestampSupport false
+par Scenario.node[0].tcp mss 536
+par Scenario.node[0].tcp msl 120s
+attr unit s
+par Scenario.node[0].tcp tcpAlgorithmClass "\"TcpReno\""
+attr enum TcpVegas,TcpWestwood,TcpNewReno,TcpReno,TcpTahoe,TcpNoCongestionControl
+par Scenario.node[0].tcp useDataNotification false
+par Scenario.node[0].tcp dupthresh 3
+par Scenario.node[0].tcp initialSsthresh 4294967295
+par Scenario.node[0].tcp stopOperationExtraTime 0s
+attr unit s
+par Scenario.node[0].tcp stopOperationTimeout 2s
+attr unit s
+par Scenario.node[0].tcp ecnWillingness false
+par Scenario.node[0].tcp dctcpGamma 0.0625
+par Scenario.node[0].tn typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].tn displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].tn forwardServiceRegistration true
+par Scenario.node[0].tn forwardProtocolRegistration true
+par Scenario.node[0].at typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[0].at displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[0].at forwardServiceRegistration true
+par Scenario.node[0].at forwardProtocolRegistration true
+par Scenario.node[0] typename "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Car\""
+par Scenario.node[0] hasStatus false
+par Scenario.node[0] osgModel "\"\""
+par Scenario.node[0] osgModelColor "\"\""
+par Scenario.node[0] canvasImage "\"\""
+par Scenario.node[0] canvasImageColor "\"\""
+par Scenario.node[0] recordPcap false
+par Scenario.node[0] numPcapRecorders 0
+par Scenario.node[0] numLoInterfaces 1
+par Scenario.node[0] numWlanInterfaces 1
+par Scenario.node[0] numEthInterfaces 0
+par Scenario.node[0] numPppInterfaces 0
+par Scenario.node[0] numTunInterfaces 0
+par Scenario.node[0] numVirtInterfaces 0
+par Scenario.node[0] fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[0] hasIpv4 true
+par Scenario.node[0] hasIpv6 false
+par Scenario.node[0] hasGn false
+par Scenario.node[0] forwarding false
+par Scenario.node[0] multicastForwarding false
+par Scenario.node[0] hasUdp true
+par Scenario.node[0] hasTcp true
+par Scenario.node[0] hasSctp false
+par Scenario.node[0] numApps 0
+par Scenario.node[1].radioIn[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].mobility typename "\"inet.mobility.static.StationaryMobility\""
+par Scenario.node[1].mobility subjectModule "\"^\""
+par Scenario.node[1].mobility coordinateSystemModule "\"\""
+par Scenario.node[1].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par Scenario.node[1].mobility updateDisplayString true
+par Scenario.node[1].mobility constraintAreaMinX 0m
+attr unit m
+par Scenario.node[1].mobility constraintAreaMinY 0m
+attr unit m
+par Scenario.node[1].mobility constraintAreaMinZ 0m
+attr unit m
+par Scenario.node[1].mobility constraintAreaMaxX 1000m
+attr unit m
+par Scenario.node[1].mobility constraintAreaMaxY 1000m
+attr unit m
+par Scenario.node[1].mobility constraintAreaMaxZ 0m
+attr unit m
+par Scenario.node[1].mobility initialX 925.597m
+attr unit m
+par Scenario.node[1].mobility initialY 836.079m
+attr unit m
+par Scenario.node[1].mobility initialZ 0m
+attr unit m
+par Scenario.node[1].mobility initialLatitude "nan deg"
+attr unit deg
+par Scenario.node[1].mobility initialLongitude "nan deg"
+attr unit deg
+par Scenario.node[1].mobility initialAltitude 0m
+attr unit m
+par Scenario.node[1].mobility initialHeading 0deg
+attr unit deg
+par Scenario.node[1].mobility initialElevation 0deg
+attr unit deg
+par Scenario.node[1].mobility initialBank 0deg
+attr unit deg
+par Scenario.node[1].mobility initFromDisplayString true
+par Scenario.node[1].mobility updateFromDisplayString true
+par Scenario.node[1].interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par Scenario.node[1].interfaceTable displayAddresses false
+par Scenario.node[1].cb typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].cb displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].cb forwardServiceRegistration true
+par Scenario.node[1].cb forwardProtocolRegistration true
+par Scenario.node[1].bl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].bl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].bl forwardServiceRegistration true
+par Scenario.node[1].bl forwardProtocolRegistration true
+par Scenario.node[1].li typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].li displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].li forwardServiceRegistration true
+par Scenario.node[1].li forwardProtocolRegistration true
+par Scenario.node[1].lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par Scenario.node[1].lo[0].lo interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].lo[0].lo mtu 4470B
+attr unit B
+scalar Scenario.node[1].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Scenario.node[1].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Scenario.node[1].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Scenario.node[1].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+par Scenario.node[1].lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par Scenario.node[1].lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[1].lo[0] recordPcap false
+par Scenario.node[1].lo[0] numPcapRecorders 0
+par Scenario.node[1].lo[0] interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+scalar Scenario.node[1].lo[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[1].lo[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[1].lo[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[1].lo[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[1].wlan[0].radioIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].wlan[0].llc.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].wlan[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].wlan[0].mib typename "\"inet.linklayer.ieee80211.mib.Ieee80211Mib\""
+par Scenario.node[1].wlan[0].llc typename "\"inet.linklayer.ieee80211.llc.Ieee80211LlcLpd\""
+par Scenario.node[1].wlan[0].llc registerProtocol false
+par Scenario.node[1].wlan[0].agent typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta\""
+par Scenario.node[1].wlan[0].agent interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].wlan[0].agent mibModule "\"Scenario.node[1].wlan[0].mib\""
+par Scenario.node[1].wlan[0].agent activeScan true
+par Scenario.node[1].wlan[0].agent channelsToScan "\"\""
+par Scenario.node[1].wlan[0].agent probeDelay 0.1s
+attr unit s
+par Scenario.node[1].wlan[0].agent minChannelTime 0.15s
+attr unit s
+par Scenario.node[1].wlan[0].agent maxChannelTime 0.3s
+attr unit s
+par Scenario.node[1].wlan[0].agent authenticationTimeout 5s
+attr unit s
+par Scenario.node[1].wlan[0].agent associationTimeout 5s
+attr unit s
+par Scenario.node[1].wlan[0].agent startingTime -1s
+attr unit s
+par Scenario.node[1].wlan[0].agent defaultSsid "\"SSID\""
+scalar Scenario.node[1].wlan[0].agent dropConfirm:count 74
+attr recordingmode count
+attr title "dropped confirms, count"
+scalar Scenario.node[1].wlan[0].agent acceptConfirm:count 0
+attr recordingmode count
+attr title "accepted confirms, count"
+scalar Scenario.node[1].wlan[0].agent sentRequest:count 75
+attr recordingmode count
+attr title "sent requests, count"
+par Scenario.node[1].wlan[0].mgmt typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta\""
+par Scenario.node[1].wlan[0].mgmt interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].wlan[0].mgmt numChannels 1
+par Scenario.node[1].wlan[0].mgmt mibModule "\"Scenario.node[1].wlan[0].mib\""
+par Scenario.node[1].wlan[0].mgmt macModule "\"Scenario.node[1].wlan[0].mac\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue typename "\"inet.linklayer.ieee80211.mac.queue.PendingQueue\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue packetCapacity 100
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue dataCapacity -1b
+attr unit b
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue comparatorClass "\"inet::ieee80211::MgmtOverDataComparator\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue bufferModule "\"\""
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:max 256
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 74
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	74
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPackets:count 74
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:sum 18944
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:histogram
+field count 74
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 18944
+field sqrsum 4849664
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	74
+bin	257	0
+statistic Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPackets:count 74
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:sum 18944
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:histogram
+field count 74
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 18944
+field sqrsum 4849664
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	74
+bin	257	0
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames typename "\"inet.linklayer.ieee80211.mac.queue.InProgressFrames\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames pendingQueueModule "\"^.pendingQueue\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames originatorMacDataServiceModule "\"^.^.originatorMacDataService\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames ackHandlerModule "\"^.^.ackHandler\""
+statistic Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 74
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.002812
+field sqrsum 1.06856e-07
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetDequeued)
+attr title "queueing times"
+bin	-inf	0
+bin	0	74
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, max"
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00015115614245638
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, timeavg"
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention typename "\"inet.linklayer.ieee80211.mac.contention.Contention\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention initialChannelBusy true
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention backoffOptimization true
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 74
+attr recordingmode count
+attr title "channel access granted, count"
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention stateChanged:count 594
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr recordingmode count
+attr title "contention state changed, count"
+attr type enum
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess typename "\"inet.linklayer.ieee80211.mac.channelaccess.Dcaf\""
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess difsn -1
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess cwMin -1
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess cwMax -1
+par Scenario.node[1].wlan[0].mac.dcf.channelAccess rxModule "\"^.^.rx\""
+scalar Scenario.node[1].wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 148
+attr interpolationmode sample-hold
+attr recordingmode count
+attr title "channel ownership, count"
+par Scenario.node[1].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy typename "\"inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy fragmentationThreshold 1500B
+attr unit B
+par Scenario.node[1].wlan[0].mac.dcf.originatorMacDataService typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService\""
+scalar Scenario.node[1].wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr recordingmode count
+attr title "packets aggregated, count"
+scalar Scenario.node[1].wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr recordingmode count
+attr title "packets fragmented, count"
+par Scenario.node[1].wlan[0].mac.dcf.recipientMacDataService typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService\""
+scalar Scenario.node[1].wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr recordingmode count
+attr title "packets deaggregated, count"
+scalar Scenario.node[1].wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 0
+attr recordingmode count
+attr title "packets defragmented, count"
+scalar Scenario.node[1].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[1].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection typename "\"inet.linklayer.ieee80211.mac.rateselection.RateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection rateControlModule "\"^.rateControl\""
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection multicastFrameBitrate -1bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection responseAckFrameBitrate -1bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection responseCtsFrameBitrate -1bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection dataFrameBitrate 6e+06bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection dataFrameBandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection dataFrameNumSpatialStreams -1
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection mgmtFrameBitrate -1bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.rateSelection controlFrameBitrate -1bps
+attr unit bps
+par Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure typename "\"inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure\""
+par Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure cwCalculatorModule "\"^.channelAccess\""
+par Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure rtsPolicyModule "\"^.rtsPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure shortRetryLimit 7
+par Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure longRetryLimit 4
+scalar Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr recordingmode count
+attr title "retry limit reached, count"
+par Scenario.node[1].wlan[0].mac.dcf.originatorProtectionMechanism typename "\"inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism\""
+par Scenario.node[1].wlan[0].mac.dcf.originatorProtectionMechanism rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf.ackHandler typename "\"inet.linklayer.ieee80211.mac.originator.AckHandler\""
+par Scenario.node[1].wlan[0].mac.dcf.originatorAckPolicy typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.originatorAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf.originatorAckPolicy ackTimeout -1s
+attr unit s
+par Scenario.node[1].wlan[0].mac.dcf.recipientAckPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.recipientAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf.rtsPolicy typename "\"inet.linklayer.ieee80211.mac.originator.RtsPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.rtsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf.rtsPolicy ctsTimeout -1s
+attr unit s
+par Scenario.node[1].wlan[0].mac.dcf.rtsPolicy rtsThreshold 2346B
+attr unit B
+par Scenario.node[1].wlan[0].mac.dcf.ctsPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.CtsPolicy\""
+par Scenario.node[1].wlan[0].mac.dcf.ctsPolicy rxModule "\"^.^.rx\""
+par Scenario.node[1].wlan[0].mac.dcf.ctsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[1].wlan[0].mac.dcf typename "\"inet.linklayer.ieee80211.mac.coordinationfunction.Dcf\""
+par Scenario.node[1].wlan[0].mac.dcf rxModule "\"^.rx\""
+par Scenario.node[1].wlan[0].mac.dcf txModule "\"^.tx\""
+scalar Scenario.node[1].wlan[0].mac.dcf frameSequenceFinished:count 74
+attr recordingmode count
+attr title "finished frame sequences, count"
+statistic Scenario.node[1].wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 74
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.002812
+field sqrsum 1.06856e-07
+attr recordingmode histogram
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations"
+bin	-inf	0
+bin	0	74
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic Scenario.node[1].wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 74
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 74
+field sqrsum 74
+attr recordingmode histogram
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets"
+bin	-inf	0
+bin	0	0
+bin	1	74
+bin	2	0
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeer:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeer:count 74
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 2368
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerMulticast:count 74
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 2368
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerBroadcast:count 74
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 2368
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 74
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 2368
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[1].wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[1].wlan[0].mac.ds typename "\"inet.linklayer.ieee80211.mac.Ds\""
+par Scenario.node[1].wlan[0].mac.ds mibModule "\"Scenario.node[1].wlan[0].mib\""
+par Scenario.node[1].wlan[0].mac.rx typename "\"inet.linklayer.ieee80211.mac.Rx\""
+par Scenario.node[1].wlan[0].mac.tx typename "\"inet.linklayer.ieee80211.mac.Tx\""
+par Scenario.node[1].wlan[0].mac.tx rxModule "\"^.rx\""
+par Scenario.node[1].wlan[0].mac typename "\"inet.linklayer.ieee80211.mac.Ieee80211Mac\""
+par Scenario.node[1].wlan[0].mac interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].wlan[0].mac mibModule "\"Scenario.node[1].wlan[0].mib\""
+par Scenario.node[1].wlan[0].mac modeSet "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[1].wlan[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[1].wlan[0].mac initialRadioMode "\"receiver\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[1].wlan[0].mac mtu 2304B
+attr unit B
+par Scenario.node[1].wlan[0].mac qosStation false
+scalar Scenario.node[1].wlan[0].mac packetReceivedFromLower:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from lower layer, count"
+scalar Scenario.node[1].wlan[0].mac packetReceivedFromLower:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetSentToLower:count 74
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to lower layer, count"
+scalar Scenario.node[1].wlan[0].mac packetSentToLower:sum(packetBytes) 2368
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from upper layer, count"
+scalar Scenario.node[1].wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to upper layer, count"
+scalar Scenario.node[1].wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[1].wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar Scenario.node[1].wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[1].wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[1].wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[1].wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[1].wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar Scenario.node[1].wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[1].wlan[0].radio.antenna typename "\"inet.physicallayer.wireless.common.antenna.IsotropicAntenna\""
+par Scenario.node[1].wlan[0].radio.antenna mobilityModule "\"^.^.^.mobility\""
+par Scenario.node[1].wlan[0].radio.antenna numAntennas 1
+par Scenario.node[1].wlan[0].radio.transmitter typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter\""
+par Scenario.node[1].wlan[0].radio.transmitter preambleDuration -1s
+attr unit s
+par Scenario.node[1].wlan[0].radio.transmitter headerLength 192b
+attr unit b
+par Scenario.node[1].wlan[0].radio.transmitter bitrate 6e+06bps
+attr unit bps
+par Scenario.node[1].wlan[0].radio.transmitter power 0.002W
+attr unit W
+par Scenario.node[1].wlan[0].radio.transmitter centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[1].wlan[0].radio.transmitter bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[1].wlan[0].radio.transmitter codeRate 1
+par Scenario.node[1].wlan[0].radio.transmitter modulation "\"BPSK\""
+par Scenario.node[1].wlan[0].radio.transmitter opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[1].wlan[0].radio.transmitter bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[1].wlan[0].radio.transmitter channelNumber 0
+par Scenario.node[1].wlan[0].radio.receiver.errorModel typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel\""
+par Scenario.node[1].wlan[0].radio.receiver.errorModel corruptionMode "\"packet\""
+attr enum packet,chunk,byte,bit
+par Scenario.node[1].wlan[0].radio.receiver.errorModel snirMode "\"min\""
+attr enum min,mean
+par Scenario.node[1].wlan[0].radio.receiver.errorModel snirOffset 0dB
+attr unit dB
+par Scenario.node[1].wlan[0].radio.receiver typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver\""
+par Scenario.node[1].wlan[0].radio.receiver snirThreshold 4dB
+attr unit dB
+par Scenario.node[1].wlan[0].radio.receiver snirThresholdMode "\"min\""
+attr enum min,mean
+par Scenario.node[1].wlan[0].radio.receiver energyDetection -85dBm
+attr unit dBm
+par Scenario.node[1].wlan[0].radio.receiver sensitivity -85dBm
+attr unit dBm
+par Scenario.node[1].wlan[0].radio.receiver centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[1].wlan[0].radio.receiver bandwidth 2.2e+07Hz
+attr unit Hz
+par Scenario.node[1].wlan[0].radio.receiver modulation "\"BPSK\""
+par Scenario.node[1].wlan[0].radio.receiver opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[1].wlan[0].radio.receiver bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[1].wlan[0].radio.receiver channelNumber 0
+par Scenario.node[1].wlan[0].radio typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio\""
+par Scenario.node[1].wlan[0].radio radioMediumModule "\"radioMedium\""
+par Scenario.node[1].wlan[0].radio energySourceModule "\"\""
+par Scenario.node[1].wlan[0].radio initialRadioMode "\"off\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[1].wlan[0].radio switchingTimes "\"ms 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\""
+par Scenario.node[1].wlan[0].radio sendRawBytes false
+par Scenario.node[1].wlan[0].radio separateTransmissionParts false
+par Scenario.node[1].wlan[0].radio separateReceptionParts false
+par Scenario.node[1].wlan[0].radio displayCommunicationRange false
+par Scenario.node[1].wlan[0].radio displayInterferenceRange false
+par Scenario.node[1].wlan[0].radio centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[1].wlan[0].radio bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[1].wlan[0].radio signalAnalogRepresentation "\"scalar\""
+attr enum scalar,dimensional
+par Scenario.node[1].wlan[0].radio opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[1].wlan[0].radio bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[1].wlan[0].radio channelNumber 0
+par Scenario.node[1].wlan[0].radio crcMode "\"declared\""
+attr enum declared,computed
+statistic Scenario.node[1].wlan[0].radio radioChannel:histogram
+field count 76
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr recordingmode histogram
+attr source radioChannelChanged
+attr title "Radio channel"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	76
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[1].wlan[0].radio radioMode:count 151
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Scenario.node[1].wlan[0].radio receptionState:count 149
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Scenario.node[1].wlan[0].radio transmissionState:count 296
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Scenario.node[1].wlan[0].radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[1].wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[1].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[1].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+par Scenario.node[1].wlan[0] typename "\"inet.linklayer.ieee80211.Ieee80211Interface\""
+par Scenario.node[1].wlan[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[1].wlan[0] recordPcap false
+par Scenario.node[1].wlan[0] numPcapRecorders 0
+par Scenario.node[1].wlan[0] interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].wlan[0] energySourceModule "\"\""
+par Scenario.node[1].wlan[0] opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[1].wlan[0] address "\"0A-AA-00-00-00-02\""
+attr mutable ""
+par Scenario.node[1].wlan[0] protocol "\"\""
+par Scenario.node[1].wlan[0] bitrate 6e+06bps
+attr unit bps
+scalar Scenario.node[1].wlan[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[1].wlan[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[1].wlan[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[1].wlan[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[1].ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].ipv4.ifIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[1].ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par Scenario.node[1].ipv4.configurator interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.configurator routingTableModule "\"Scenario.node[1].ipv4.routingTable\""
+par Scenario.node[1].ipv4.configurator networkConfiguratorModule "\"configurator\""
+par Scenario.node[1].ipv4.configurator configureRoutingTable true
+par Scenario.node[1].ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par Scenario.node[1].ipv4.routingTable interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.routingTable routerId "\"auto\""
+par Scenario.node[1].ipv4.routingTable netmaskRoutes "\"*\""
+par Scenario.node[1].ipv4.routingTable forwarding false
+par Scenario.node[1].ipv4.routingTable multicastForwarding false
+par Scenario.node[1].ipv4.routingTable useAdminDist false
+par Scenario.node[1].ipv4.routingTable routingFile "\"\""
+par Scenario.node[1].ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par Scenario.node[1].ipv4.natTable networkProtocolModule "\"^.ip\""
+par Scenario.node[1].ipv4.natTable config "<config/> at content:1"
+par Scenario.node[1].ipv4.up typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].ipv4.up forwardServiceRegistration true
+par Scenario.node[1].ipv4.up forwardProtocolRegistration true
+par Scenario.node[1].ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par Scenario.node[1].ipv4.igmp interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.igmp routingTableModule "\"Scenario.node[1].ipv4.routingTable\""
+par Scenario.node[1].ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[1].ipv4.igmp enabled true
+par Scenario.node[1].ipv4.igmp robustnessVariable 2
+par Scenario.node[1].ipv4.igmp queryInterval 125s
+attr unit s
+par Scenario.node[1].ipv4.igmp queryResponseInterval 10s
+attr unit s
+par Scenario.node[1].ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par Scenario.node[1].ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par Scenario.node[1].ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par Scenario.node[1].ipv4.igmp startupQueryCount 2
+par Scenario.node[1].ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par Scenario.node[1].ipv4.igmp lastMemberQueryCount 2
+par Scenario.node[1].ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par Scenario.node[1].ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par Scenario.node[1].ipv4.icmp interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.icmp routingTableModule "\"Scenario.node[1].ipv4.routingTable\""
+par Scenario.node[1].ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par Scenario.node[1].ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par Scenario.node[1].ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].ipv4.mp forwardServiceRegistration true
+par Scenario.node[1].ipv4.mp forwardProtocolRegistration true
+par Scenario.node[1].ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par Scenario.node[1].ipv4.ip interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.ip routingTableModule "\"Scenario.node[1].ipv4.routingTable\""
+par Scenario.node[1].ipv4.ip arpModule "\"Scenario.node[1].ipv4.arp\""
+par Scenario.node[1].ipv4.ip icmpModule "\"Scenario.node[1].ipv4.icmp\""
+par Scenario.node[1].ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[1].ipv4.ip timeToLive 32
+par Scenario.node[1].ipv4.ip multicastTimeToLive 32
+par Scenario.node[1].ipv4.ip fragmentTimeout 60s
+attr unit s
+par Scenario.node[1].ipv4.ip limitedBroadcast false
+par Scenario.node[1].ipv4.ip directBroadcastInterfaces "\"\""
+scalar Scenario.node[1].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Scenario.node[1].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Scenario.node[1].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Scenario.node[1].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Scenario.node[1].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Scenario.node[1].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Scenario.node[1].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par Scenario.node[1].ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par Scenario.node[1].ipv4.arp interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4.arp routingTableModule "\"Scenario.node[1].ipv4.routingTable\""
+par Scenario.node[1].ipv4.arp retryTimeout 1s
+attr unit s
+par Scenario.node[1].ipv4.arp retryCount 3
+par Scenario.node[1].ipv4.arp cacheTimeout 120s
+attr unit s
+par Scenario.node[1].ipv4.arp proxyArpInterfaces "\"\""
+scalar Scenario.node[1].ipv4.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar Scenario.node[1].ipv4.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar Scenario.node[1].ipv4.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar Scenario.node[1].ipv4.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar Scenario.node[1].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar Scenario.node[1].ipv4.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar Scenario.node[1].ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par Scenario.node[1].ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].ipv4.lp forwardServiceRegistration true
+par Scenario.node[1].ipv4.lp forwardProtocolRegistration true
+par Scenario.node[1].ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par Scenario.node[1].ipv4 forwarding false
+par Scenario.node[1].ipv4 multicastForwarding false
+par Scenario.node[1].ipv4 interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].ipv4 displayStringTextFormat "\"%i\""
+par Scenario.node[1].nl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].nl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].nl forwardServiceRegistration true
+par Scenario.node[1].nl forwardProtocolRegistration true
+par Scenario.node[1].udp typename "\"inet.transportlayer.udp.Udp\""
+par Scenario.node[1].udp interfaceTableModule "\"Scenario.node[1].interfaceTable\""
+par Scenario.node[1].udp icmpModule "\"^.ipv4.icmp\""
+par Scenario.node[1].udp icmpv6Module "\"^.ipv6.icmpv6\""
+par Scenario.node[1].udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par Scenario.node[1].udp defaultMulticastLoop true
+scalar Scenario.node[1].udp packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar Scenario.node[1].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[1].udp packetSent:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar Scenario.node[1].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[1].udp passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Scenario.node[1].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Scenario.node[1].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+par Scenario.node[1].tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par Scenario.node[1].tcp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[1].tcp advertisedWindow 7504
+par Scenario.node[1].tcp delayedAcksEnabled false
+par Scenario.node[1].tcp nagleEnabled true
+par Scenario.node[1].tcp limitedTransmitEnabled false
+par Scenario.node[1].tcp increasedIWEnabled false
+par Scenario.node[1].tcp sackSupport false
+par Scenario.node[1].tcp windowScalingSupport false
+par Scenario.node[1].tcp windowScalingFactor -1
+par Scenario.node[1].tcp timestampSupport false
+par Scenario.node[1].tcp mss 536
+par Scenario.node[1].tcp msl 120s
+attr unit s
+par Scenario.node[1].tcp tcpAlgorithmClass "\"TcpReno\""
+attr enum TcpVegas,TcpWestwood,TcpNewReno,TcpReno,TcpTahoe,TcpNoCongestionControl
+par Scenario.node[1].tcp useDataNotification false
+par Scenario.node[1].tcp dupthresh 3
+par Scenario.node[1].tcp initialSsthresh 4294967295
+par Scenario.node[1].tcp stopOperationExtraTime 0s
+attr unit s
+par Scenario.node[1].tcp stopOperationTimeout 2s
+attr unit s
+par Scenario.node[1].tcp ecnWillingness false
+par Scenario.node[1].tcp dctcpGamma 0.0625
+par Scenario.node[1].tn typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].tn displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].tn forwardServiceRegistration true
+par Scenario.node[1].tn forwardProtocolRegistration true
+par Scenario.node[1].at typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[1].at displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[1].at forwardServiceRegistration true
+par Scenario.node[1].at forwardProtocolRegistration true
+par Scenario.node[1] typename "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Car\""
+par Scenario.node[1] hasStatus false
+par Scenario.node[1] osgModel "\"\""
+par Scenario.node[1] osgModelColor "\"\""
+par Scenario.node[1] canvasImage "\"\""
+par Scenario.node[1] canvasImageColor "\"\""
+par Scenario.node[1] recordPcap false
+par Scenario.node[1] numPcapRecorders 0
+par Scenario.node[1] numLoInterfaces 1
+par Scenario.node[1] numWlanInterfaces 1
+par Scenario.node[1] numEthInterfaces 0
+par Scenario.node[1] numPppInterfaces 0
+par Scenario.node[1] numTunInterfaces 0
+par Scenario.node[1] numVirtInterfaces 0
+par Scenario.node[1] fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[1] hasIpv4 true
+par Scenario.node[1] hasIpv6 false
+par Scenario.node[1] hasGn false
+par Scenario.node[1] forwarding false
+par Scenario.node[1] multicastForwarding false
+par Scenario.node[1] hasUdp true
+par Scenario.node[1] hasTcp true
+par Scenario.node[1] hasSctp false
+par Scenario.node[1] numApps 0
+par Scenario.node[2].radioIn[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].mobility typename "\"inet.mobility.static.StationaryMobility\""
+par Scenario.node[2].mobility subjectModule "\"^\""
+par Scenario.node[2].mobility coordinateSystemModule "\"\""
+par Scenario.node[2].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par Scenario.node[2].mobility updateDisplayString true
+par Scenario.node[2].mobility constraintAreaMinX 0m
+attr unit m
+par Scenario.node[2].mobility constraintAreaMinY 0m
+attr unit m
+par Scenario.node[2].mobility constraintAreaMinZ 0m
+attr unit m
+par Scenario.node[2].mobility constraintAreaMaxX 1000m
+attr unit m
+par Scenario.node[2].mobility constraintAreaMaxY 1000m
+attr unit m
+par Scenario.node[2].mobility constraintAreaMaxZ 0m
+attr unit m
+par Scenario.node[2].mobility initialX 222.321m
+attr unit m
+par Scenario.node[2].mobility initialY 616.934m
+attr unit m
+par Scenario.node[2].mobility initialZ 0m
+attr unit m
+par Scenario.node[2].mobility initialLatitude "nan deg"
+attr unit deg
+par Scenario.node[2].mobility initialLongitude "nan deg"
+attr unit deg
+par Scenario.node[2].mobility initialAltitude 0m
+attr unit m
+par Scenario.node[2].mobility initialHeading 0deg
+attr unit deg
+par Scenario.node[2].mobility initialElevation 0deg
+attr unit deg
+par Scenario.node[2].mobility initialBank 0deg
+attr unit deg
+par Scenario.node[2].mobility initFromDisplayString true
+par Scenario.node[2].mobility updateFromDisplayString true
+par Scenario.node[2].interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par Scenario.node[2].interfaceTable displayAddresses false
+par Scenario.node[2].cb typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].cb displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].cb forwardServiceRegistration true
+par Scenario.node[2].cb forwardProtocolRegistration true
+par Scenario.node[2].bl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].bl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].bl forwardServiceRegistration true
+par Scenario.node[2].bl forwardProtocolRegistration true
+par Scenario.node[2].li typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].li displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].li forwardServiceRegistration true
+par Scenario.node[2].li forwardProtocolRegistration true
+par Scenario.node[2].lo[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].lo[0].lo.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].lo[0].lo typename "\"inet.linklayer.loopback.Loopback\""
+par Scenario.node[2].lo[0].lo interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].lo[0].lo mtu 4470B
+attr unit B
+scalar Scenario.node[2].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Scenario.node[2].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Scenario.node[2].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Scenario.node[2].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+par Scenario.node[2].lo[0] typename "\"inet.linklayer.loopback.LoopbackInterface\""
+par Scenario.node[2].lo[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[2].lo[0] recordPcap false
+par Scenario.node[2].lo[0] numPcapRecorders 0
+par Scenario.node[2].lo[0] interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+scalar Scenario.node[2].lo[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[2].lo[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[2].lo[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[2].lo[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[2].wlan[0].radioIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].wlan[0].llc.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].wlan[0].upperLayerIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].wlan[0].mib typename "\"inet.linklayer.ieee80211.mib.Ieee80211Mib\""
+par Scenario.node[2].wlan[0].llc typename "\"inet.linklayer.ieee80211.llc.Ieee80211LlcLpd\""
+par Scenario.node[2].wlan[0].llc registerProtocol false
+par Scenario.node[2].wlan[0].agent typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta\""
+par Scenario.node[2].wlan[0].agent interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].wlan[0].agent mibModule "\"Scenario.node[2].wlan[0].mib\""
+par Scenario.node[2].wlan[0].agent activeScan true
+par Scenario.node[2].wlan[0].agent channelsToScan "\"\""
+par Scenario.node[2].wlan[0].agent probeDelay 0.1s
+attr unit s
+par Scenario.node[2].wlan[0].agent minChannelTime 0.15s
+attr unit s
+par Scenario.node[2].wlan[0].agent maxChannelTime 0.3s
+attr unit s
+par Scenario.node[2].wlan[0].agent authenticationTimeout 5s
+attr unit s
+par Scenario.node[2].wlan[0].agent associationTimeout 5s
+attr unit s
+par Scenario.node[2].wlan[0].agent startingTime -1s
+attr unit s
+par Scenario.node[2].wlan[0].agent defaultSsid "\"SSID\""
+scalar Scenario.node[2].wlan[0].agent dropConfirm:count 53
+attr recordingmode count
+attr title "dropped confirms, count"
+scalar Scenario.node[2].wlan[0].agent acceptConfirm:count 0
+attr recordingmode count
+attr title "accepted confirms, count"
+scalar Scenario.node[2].wlan[0].agent sentRequest:count 54
+attr recordingmode count
+attr title "sent requests, count"
+par Scenario.node[2].wlan[0].mgmt typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta\""
+par Scenario.node[2].wlan[0].mgmt interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].wlan[0].mgmt numChannels 1
+par Scenario.node[2].wlan[0].mgmt mibModule "\"Scenario.node[2].wlan[0].mib\""
+par Scenario.node[2].wlan[0].mgmt macModule "\"Scenario.node[2].wlan[0].mac\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue typename "\"inet.linklayer.ieee80211.mac.queue.PendingQueue\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue packetCapacity 100
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue dataCapacity -1b
+attr unit b
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue comparatorClass "\"inet::ieee80211::MgmtOverDataComparator\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue bufferModule "\"\""
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:max 256
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 53
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	53
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPackets:count 53
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:sum 13568
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:histogram
+field count 53
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 13568
+field sqrsum 3473408
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	53
+bin	257	0
+statistic Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPackets:count 53
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:sum 13568
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue incomingPacketLengths:histogram
+field count 53
+field mean 256
+field stddev 0
+field min 256
+field max 256
+field sum 13568
+field sqrsum 3473408
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	255	0
+bin	256	53
+bin	257	0
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames typename "\"inet.linklayer.ieee80211.mac.queue.InProgressFrames\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames pendingQueueModule "\"^.pendingQueue\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames originatorMacDataServiceModule "\"^.^.originatorMacDataService\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames ackHandlerModule "\"^.^.ackHandler\""
+statistic Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 53
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.002014
+field sqrsum 7.6532e-08
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetDequeued)
+attr title "queueing times"
+bin	-inf	0
+bin	0	53
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, max"
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00014805253152011
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, timeavg"
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention typename "\"inet.linklayer.ieee80211.mac.contention.Contention\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention initialChannelBusy true
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention backoffOptimization true
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 53
+attr recordingmode count
+attr title "channel access granted, count"
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention stateChanged:count 426
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr recordingmode count
+attr title "contention state changed, count"
+attr type enum
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess typename "\"inet.linklayer.ieee80211.mac.channelaccess.Dcaf\""
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess difsn -1
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess cwMin -1
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess cwMax -1
+par Scenario.node[2].wlan[0].mac.dcf.channelAccess rxModule "\"^.^.rx\""
+scalar Scenario.node[2].wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 106
+attr interpolationmode sample-hold
+attr recordingmode count
+attr title "channel ownership, count"
+par Scenario.node[2].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy typename "\"inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.originatorMacDataService.fragmentationPolicy fragmentationThreshold 1500B
+attr unit B
+par Scenario.node[2].wlan[0].mac.dcf.originatorMacDataService typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService\""
+scalar Scenario.node[2].wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr recordingmode count
+attr title "packets aggregated, count"
+scalar Scenario.node[2].wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr recordingmode count
+attr title "packets fragmented, count"
+par Scenario.node[2].wlan[0].mac.dcf.recipientMacDataService typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService\""
+scalar Scenario.node[2].wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr recordingmode count
+attr title "packets deaggregated, count"
+scalar Scenario.node[2].wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 0
+attr recordingmode count
+attr title "packets defragmented, count"
+scalar Scenario.node[2].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[2].wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection typename "\"inet.linklayer.ieee80211.mac.rateselection.RateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection rateControlModule "\"^.rateControl\""
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection multicastFrameBitrate -1bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection responseAckFrameBitrate -1bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection responseCtsFrameBitrate -1bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection dataFrameBitrate 6e+06bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection dataFrameBandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection dataFrameNumSpatialStreams -1
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection mgmtFrameBitrate -1bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.rateSelection controlFrameBitrate -1bps
+attr unit bps
+par Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure typename "\"inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure\""
+par Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure cwCalculatorModule "\"^.channelAccess\""
+par Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure rtsPolicyModule "\"^.rtsPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure shortRetryLimit 7
+par Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure longRetryLimit 4
+scalar Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr recordingmode count
+attr title "retry limit reached, count"
+par Scenario.node[2].wlan[0].mac.dcf.originatorProtectionMechanism typename "\"inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism\""
+par Scenario.node[2].wlan[0].mac.dcf.originatorProtectionMechanism rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf.ackHandler typename "\"inet.linklayer.ieee80211.mac.originator.AckHandler\""
+par Scenario.node[2].wlan[0].mac.dcf.originatorAckPolicy typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.originatorAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf.originatorAckPolicy ackTimeout -1s
+attr unit s
+par Scenario.node[2].wlan[0].mac.dcf.recipientAckPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.recipientAckPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf.rtsPolicy typename "\"inet.linklayer.ieee80211.mac.originator.RtsPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.rtsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf.rtsPolicy ctsTimeout -1s
+attr unit s
+par Scenario.node[2].wlan[0].mac.dcf.rtsPolicy rtsThreshold 2346B
+attr unit B
+par Scenario.node[2].wlan[0].mac.dcf.ctsPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.CtsPolicy\""
+par Scenario.node[2].wlan[0].mac.dcf.ctsPolicy rxModule "\"^.^.rx\""
+par Scenario.node[2].wlan[0].mac.dcf.ctsPolicy rateSelectionModule "\"^.rateSelection\""
+par Scenario.node[2].wlan[0].mac.dcf typename "\"inet.linklayer.ieee80211.mac.coordinationfunction.Dcf\""
+par Scenario.node[2].wlan[0].mac.dcf rxModule "\"^.rx\""
+par Scenario.node[2].wlan[0].mac.dcf txModule "\"^.tx\""
+scalar Scenario.node[2].wlan[0].mac.dcf frameSequenceFinished:count 53
+attr recordingmode count
+attr title "finished frame sequences, count"
+statistic Scenario.node[2].wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 53
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 0.002014
+field sqrsum 7.6532e-08
+attr recordingmode histogram
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations"
+bin	-inf	0
+bin	0	53
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic Scenario.node[2].wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 53
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 53
+field sqrsum 53
+attr recordingmode histogram
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets"
+bin	-inf	0
+bin	0	0
+bin	1	53
+bin	2	0
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeer:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeer:count 53
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 1696
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerMulticast:count 53
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 1696
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerBroadcast:count 53
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 1696
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 53
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 1696
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[2].wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[2].wlan[0].mac.ds typename "\"inet.linklayer.ieee80211.mac.Ds\""
+par Scenario.node[2].wlan[0].mac.ds mibModule "\"Scenario.node[2].wlan[0].mib\""
+par Scenario.node[2].wlan[0].mac.rx typename "\"inet.linklayer.ieee80211.mac.Rx\""
+par Scenario.node[2].wlan[0].mac.tx typename "\"inet.linklayer.ieee80211.mac.Tx\""
+par Scenario.node[2].wlan[0].mac.tx rxModule "\"^.rx\""
+par Scenario.node[2].wlan[0].mac typename "\"inet.linklayer.ieee80211.mac.Ieee80211Mac\""
+par Scenario.node[2].wlan[0].mac interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].wlan[0].mac mibModule "\"Scenario.node[2].wlan[0].mib\""
+par Scenario.node[2].wlan[0].mac modeSet "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[2].wlan[0].mac fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[2].wlan[0].mac initialRadioMode "\"receiver\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[2].wlan[0].mac mtu 2304B
+attr unit B
+par Scenario.node[2].wlan[0].mac qosStation false
+scalar Scenario.node[2].wlan[0].mac packetReceivedFromLower:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from lower layer, count"
+scalar Scenario.node[2].wlan[0].mac packetReceivedFromLower:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetSentToLower:count 53
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to lower layer, count"
+scalar Scenario.node[2].wlan[0].mac packetSentToLower:sum(packetBytes) 1696
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from upper layer, count"
+scalar Scenario.node[2].wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to upper layer, count"
+scalar Scenario.node[2].wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar Scenario.node[2].wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar Scenario.node[2].wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar Scenario.node[2].wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Scenario.node[2].wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar Scenario.node[2].wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar Scenario.node[2].wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar Scenario.node[2].wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par Scenario.node[2].wlan[0].radio.antenna typename "\"inet.physicallayer.wireless.common.antenna.IsotropicAntenna\""
+par Scenario.node[2].wlan[0].radio.antenna mobilityModule "\"^.^.^.mobility\""
+par Scenario.node[2].wlan[0].radio.antenna numAntennas 1
+par Scenario.node[2].wlan[0].radio.transmitter typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter\""
+par Scenario.node[2].wlan[0].radio.transmitter preambleDuration -1s
+attr unit s
+par Scenario.node[2].wlan[0].radio.transmitter headerLength 192b
+attr unit b
+par Scenario.node[2].wlan[0].radio.transmitter bitrate 6e+06bps
+attr unit bps
+par Scenario.node[2].wlan[0].radio.transmitter power 0.002W
+attr unit W
+par Scenario.node[2].wlan[0].radio.transmitter centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[2].wlan[0].radio.transmitter bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[2].wlan[0].radio.transmitter codeRate 1
+par Scenario.node[2].wlan[0].radio.transmitter modulation "\"BPSK\""
+par Scenario.node[2].wlan[0].radio.transmitter opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[2].wlan[0].radio.transmitter bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[2].wlan[0].radio.transmitter channelNumber 0
+par Scenario.node[2].wlan[0].radio.receiver.errorModel typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel\""
+par Scenario.node[2].wlan[0].radio.receiver.errorModel corruptionMode "\"packet\""
+attr enum packet,chunk,byte,bit
+par Scenario.node[2].wlan[0].radio.receiver.errorModel snirMode "\"min\""
+attr enum min,mean
+par Scenario.node[2].wlan[0].radio.receiver.errorModel snirOffset 0dB
+attr unit dB
+par Scenario.node[2].wlan[0].radio.receiver typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver\""
+par Scenario.node[2].wlan[0].radio.receiver snirThreshold 4dB
+attr unit dB
+par Scenario.node[2].wlan[0].radio.receiver snirThresholdMode "\"min\""
+attr enum min,mean
+par Scenario.node[2].wlan[0].radio.receiver energyDetection -85dBm
+attr unit dBm
+par Scenario.node[2].wlan[0].radio.receiver sensitivity -85dBm
+attr unit dBm
+par Scenario.node[2].wlan[0].radio.receiver centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[2].wlan[0].radio.receiver bandwidth 2.2e+07Hz
+attr unit Hz
+par Scenario.node[2].wlan[0].radio.receiver modulation "\"BPSK\""
+par Scenario.node[2].wlan[0].radio.receiver opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[2].wlan[0].radio.receiver bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[2].wlan[0].radio.receiver channelNumber 0
+par Scenario.node[2].wlan[0].radio typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio\""
+par Scenario.node[2].wlan[0].radio radioMediumModule "\"radioMedium\""
+par Scenario.node[2].wlan[0].radio energySourceModule "\"\""
+par Scenario.node[2].wlan[0].radio initialRadioMode "\"off\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par Scenario.node[2].wlan[0].radio switchingTimes "\"ms 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\""
+par Scenario.node[2].wlan[0].radio sendRawBytes false
+par Scenario.node[2].wlan[0].radio separateTransmissionParts false
+par Scenario.node[2].wlan[0].radio separateReceptionParts false
+par Scenario.node[2].wlan[0].radio displayCommunicationRange false
+par Scenario.node[2].wlan[0].radio displayInterferenceRange false
+par Scenario.node[2].wlan[0].radio centerFrequency 2.412e+09Hz
+attr unit Hz
+par Scenario.node[2].wlan[0].radio bandwidth "nan Hz"
+attr unit Hz
+par Scenario.node[2].wlan[0].radio signalAnalogRepresentation "\"scalar\""
+attr enum scalar,dimensional
+par Scenario.node[2].wlan[0].radio opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[2].wlan[0].radio bandName "\"2.4 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par Scenario.node[2].wlan[0].radio channelNumber 0
+par Scenario.node[2].wlan[0].radio crcMode "\"declared\""
+attr enum declared,computed
+statistic Scenario.node[2].wlan[0].radio radioChannel:histogram
+field count 55
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr recordingmode histogram
+attr source radioChannelChanged
+attr title "Radio channel"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	55
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Scenario.node[2].wlan[0].radio radioMode:count 109
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Scenario.node[2].wlan[0].radio receptionState:count 107
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Scenario.node[2].wlan[0].radio transmissionState:count 212
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Scenario.node[2].wlan[0].radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[2].wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[2].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic Scenario.node[2].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+par Scenario.node[2].wlan[0] typename "\"inet.linklayer.ieee80211.Ieee80211Interface\""
+par Scenario.node[2].wlan[0] displayStringTextFormat "\"%a (%i)\\n%m\""
+par Scenario.node[2].wlan[0] recordPcap false
+par Scenario.node[2].wlan[0] numPcapRecorders 0
+par Scenario.node[2].wlan[0] interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].wlan[0] energySourceModule "\"\""
+par Scenario.node[2].wlan[0] opMode "\"g(mixed)\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par Scenario.node[2].wlan[0] address "\"0A-AA-00-00-00-03\""
+attr mutable ""
+par Scenario.node[2].wlan[0] protocol "\"\""
+par Scenario.node[2].wlan[0] bitrate 6e+06bps
+attr unit bps
+scalar Scenario.node[2].wlan[0] packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar Scenario.node[2].wlan[0] packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar Scenario.node[2].wlan[0] packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar Scenario.node[2].wlan[0] packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par Scenario.node[2].ipv4.transportIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].ipv4.up.out[0].channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].ipv4.lp.out[2].channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].ipv4.ifIn.channel typename "\"ned.IdealChannel\""
+par Scenario.node[2].ipv4.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator\""
+par Scenario.node[2].ipv4.configurator interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.configurator routingTableModule "\"Scenario.node[2].ipv4.routingTable\""
+par Scenario.node[2].ipv4.configurator networkConfiguratorModule "\"configurator\""
+par Scenario.node[2].ipv4.configurator configureRoutingTable true
+par Scenario.node[2].ipv4.routingTable typename "\"inet.networklayer.ipv4.Ipv4RoutingTable\""
+par Scenario.node[2].ipv4.routingTable interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.routingTable routerId "\"auto\""
+par Scenario.node[2].ipv4.routingTable netmaskRoutes "\"*\""
+par Scenario.node[2].ipv4.routingTable forwarding false
+par Scenario.node[2].ipv4.routingTable multicastForwarding false
+par Scenario.node[2].ipv4.routingTable useAdminDist false
+par Scenario.node[2].ipv4.routingTable routingFile "\"\""
+par Scenario.node[2].ipv4.natTable typename "\"inet.networklayer.ipv4.Ipv4NatTable\""
+par Scenario.node[2].ipv4.natTable networkProtocolModule "\"^.ip\""
+par Scenario.node[2].ipv4.natTable config "<config/> at content:1"
+par Scenario.node[2].ipv4.up typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].ipv4.up displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].ipv4.up forwardServiceRegistration true
+par Scenario.node[2].ipv4.up forwardProtocolRegistration true
+par Scenario.node[2].ipv4.igmp typename "\"inet.networklayer.ipv4.Igmpv2\""
+par Scenario.node[2].ipv4.igmp interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.igmp routingTableModule "\"Scenario.node[2].ipv4.routingTable\""
+par Scenario.node[2].ipv4.igmp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[2].ipv4.igmp enabled true
+par Scenario.node[2].ipv4.igmp robustnessVariable 2
+par Scenario.node[2].ipv4.igmp queryInterval 125s
+attr unit s
+par Scenario.node[2].ipv4.igmp queryResponseInterval 10s
+attr unit s
+par Scenario.node[2].ipv4.igmp groupMembershipInterval 260s
+attr unit s
+par Scenario.node[2].ipv4.igmp otherQuerierPresentInterval 255s
+attr unit s
+par Scenario.node[2].ipv4.igmp startupQueryInterval 31.25s
+attr unit s
+par Scenario.node[2].ipv4.igmp startupQueryCount 2
+par Scenario.node[2].ipv4.igmp lastMemberQueryInterval 1s
+attr unit s
+par Scenario.node[2].ipv4.igmp lastMemberQueryCount 2
+par Scenario.node[2].ipv4.igmp unsolicitedReportInterval 10s
+attr unit s
+par Scenario.node[2].ipv4.icmp typename "\"inet.networklayer.ipv4.Icmp\""
+par Scenario.node[2].ipv4.icmp interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.icmp routingTableModule "\"Scenario.node[2].ipv4.routingTable\""
+par Scenario.node[2].ipv4.icmp crcMode "\"declared\""
+attr enum declared,computed
+attr mutable ""
+par Scenario.node[2].ipv4.icmp quoteLength 8B
+attr mutable ""
+attr unit B
+par Scenario.node[2].ipv4.mp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].ipv4.mp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].ipv4.mp forwardServiceRegistration true
+par Scenario.node[2].ipv4.mp forwardProtocolRegistration true
+par Scenario.node[2].ipv4.ip typename "\"inet.networklayer.ipv4.Ipv4\""
+par Scenario.node[2].ipv4.ip interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.ip routingTableModule "\"Scenario.node[2].ipv4.routingTable\""
+par Scenario.node[2].ipv4.ip arpModule "\"Scenario.node[2].ipv4.arp\""
+par Scenario.node[2].ipv4.ip icmpModule "\"Scenario.node[2].ipv4.icmp\""
+par Scenario.node[2].ipv4.ip crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[2].ipv4.ip timeToLive 32
+par Scenario.node[2].ipv4.ip multicastTimeToLive 32
+par Scenario.node[2].ipv4.ip fragmentTimeout 60s
+attr unit s
+par Scenario.node[2].ipv4.ip limitedBroadcast false
+par Scenario.node[2].ipv4.ip directBroadcastInterfaces "\"\""
+scalar Scenario.node[2].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Scenario.node[2].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Scenario.node[2].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Scenario.node[2].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Scenario.node[2].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Scenario.node[2].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Scenario.node[2].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+par Scenario.node[2].ipv4.arp typename "\"inet.networklayer.arp.ipv4.Arp\""
+par Scenario.node[2].ipv4.arp interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4.arp routingTableModule "\"Scenario.node[2].ipv4.routingTable\""
+par Scenario.node[2].ipv4.arp retryTimeout 1s
+attr unit s
+par Scenario.node[2].ipv4.arp retryCount 3
+par Scenario.node[2].ipv4.arp cacheTimeout 120s
+attr unit s
+par Scenario.node[2].ipv4.arp proxyArpInterfaces "\"\""
+scalar Scenario.node[2].ipv4.arp arpResolutionFailed:count 0
+attr recordingmode count
+attr title "ARP failed resolutions, count"
+scalar Scenario.node[2].ipv4.arp arpResolutionCompleted:count 0
+attr recordingmode count
+attr title "ARP completed resolutions, count"
+scalar Scenario.node[2].ipv4.arp arpResolutionInitiated:count 0
+attr recordingmode count
+attr title "ARP initiated resolutions, count"
+scalar Scenario.node[2].ipv4.arp arpReplySent:count 0
+attr recordingmode count
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar Scenario.node[2].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar Scenario.node[2].ipv4.arp arpRequestSent:count 0
+attr recordingmode count
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar Scenario.node[2].ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr recordingmode sum(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+par Scenario.node[2].ipv4.lp typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].ipv4.lp displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].ipv4.lp forwardServiceRegistration true
+par Scenario.node[2].ipv4.lp forwardProtocolRegistration true
+par Scenario.node[2].ipv4 typename "\"inet.networklayer.ipv4.Ipv4NetworkLayer\""
+par Scenario.node[2].ipv4 forwarding false
+par Scenario.node[2].ipv4 multicastForwarding false
+par Scenario.node[2].ipv4 interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].ipv4 displayStringTextFormat "\"%i\""
+par Scenario.node[2].nl typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].nl displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].nl forwardServiceRegistration true
+par Scenario.node[2].nl forwardProtocolRegistration true
+par Scenario.node[2].udp typename "\"inet.transportlayer.udp.Udp\""
+par Scenario.node[2].udp interfaceTableModule "\"Scenario.node[2].interfaceTable\""
+par Scenario.node[2].udp icmpModule "\"^.ipv4.icmp\""
+par Scenario.node[2].udp icmpv6Module "\"^.ipv6.icmpv6\""
+par Scenario.node[2].udp crcMode "\"declared\""
+attr enum disabled,declared,computed
+par Scenario.node[2].udp defaultMulticastLoop true
+scalar Scenario.node[2].udp packetReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetReceived
+attr title "packets received, count"
+scalar Scenario.node[2].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Scenario.node[2].udp packetSent:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSent
+attr title "packets sent, count"
+scalar Scenario.node[2].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Scenario.node[2].udp passedUpPk:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Scenario.node[2].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Scenario.node[2].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+par Scenario.node[2].tcp typename "\"inet.transportlayer.tcp.Tcp\""
+par Scenario.node[2].tcp crcMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[2].tcp advertisedWindow 7504
+par Scenario.node[2].tcp delayedAcksEnabled false
+par Scenario.node[2].tcp nagleEnabled true
+par Scenario.node[2].tcp limitedTransmitEnabled false
+par Scenario.node[2].tcp increasedIWEnabled false
+par Scenario.node[2].tcp sackSupport false
+par Scenario.node[2].tcp windowScalingSupport false
+par Scenario.node[2].tcp windowScalingFactor -1
+par Scenario.node[2].tcp timestampSupport false
+par Scenario.node[2].tcp mss 536
+par Scenario.node[2].tcp msl 120s
+attr unit s
+par Scenario.node[2].tcp tcpAlgorithmClass "\"TcpReno\""
+attr enum TcpVegas,TcpWestwood,TcpNewReno,TcpReno,TcpTahoe,TcpNoCongestionControl
+par Scenario.node[2].tcp useDataNotification false
+par Scenario.node[2].tcp dupthresh 3
+par Scenario.node[2].tcp initialSsthresh 4294967295
+par Scenario.node[2].tcp stopOperationExtraTime 0s
+attr unit s
+par Scenario.node[2].tcp stopOperationTimeout 2s
+attr unit s
+par Scenario.node[2].tcp ecnWillingness false
+par Scenario.node[2].tcp dctcpGamma 0.0625
+par Scenario.node[2].tn typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].tn displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].tn forwardServiceRegistration true
+par Scenario.node[2].tn forwardProtocolRegistration true
+par Scenario.node[2].at typename "\"inet.common.MessageDispatcher\""
+par Scenario.node[2].at displayStringTextFormat "\"processed %p pk (%l)\""
+par Scenario.node[2].at forwardServiceRegistration true
+par Scenario.node[2].at forwardProtocolRegistration true
+par Scenario.node[2] typename "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Car\""
+par Scenario.node[2] hasStatus false
+par Scenario.node[2] osgModel "\"\""
+par Scenario.node[2] osgModelColor "\"\""
+par Scenario.node[2] canvasImage "\"\""
+par Scenario.node[2] canvasImageColor "\"\""
+par Scenario.node[2] recordPcap false
+par Scenario.node[2] numPcapRecorders 0
+par Scenario.node[2] numLoInterfaces 1
+par Scenario.node[2] numWlanInterfaces 1
+par Scenario.node[2] numEthInterfaces 0
+par Scenario.node[2] numPppInterfaces 0
+par Scenario.node[2] numTunInterfaces 0
+par Scenario.node[2] numVirtInterfaces 0
+par Scenario.node[2] fcsMode "\"declared\""
+attr enum declared,computed
+par Scenario.node[2] hasIpv4 true
+par Scenario.node[2] hasIpv6 false
+par Scenario.node[2] hasGn false
+par Scenario.node[2] forwarding false
+par Scenario.node[2] multicastForwarding false
+par Scenario.node[2] hasUdp true
+par Scenario.node[2] hasTcp true
+par Scenario.node[2] hasSctp false
+par Scenario.node[2] numApps 0
+par Scenario typename "\"vanet_tutorials.simulations.veins_inet3.examples.veins_inet.Scenario\""
+

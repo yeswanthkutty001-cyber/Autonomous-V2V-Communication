@@ -1,0 +1,8 @@
+OMNet++:
+cd ~/omnetpp-6.0.2
+. setenv
+omnetpp
+
+SUMO:
+cd ~/veins-master/veins-master/bin
+./veins_launchd -vv -c sumo-gui

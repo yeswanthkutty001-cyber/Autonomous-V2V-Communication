@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="home.net.xml"/>
+        <route-files value="home.rou.xml"/>  <!-- Change if your routes file is named differently, e.g., home.rout.xml -->
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>  <!-- Matches your -e 1000; adjust as needed -->
+    </time>
+
+    <gui_only>
+        <start value="true"/>     <!-- Auto-start simulation -->
+        <quit-on-end value="true"/>
+        <delay value="100"/>      <!-- Slow down for easier viewing -->
+    </gui_only>
+
+</configuration>

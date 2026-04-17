@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Copy files into temporary run directory -->
+    <copy file="intersection.net.xml"/>
+    <copy file="intersection.rou.xml"/>
+    <copy file="intersection.poly.xml"/>
+    <copy file="intersection.sumocfg" type="config" />
+
+    <!-- Optional: different seed per run -->
+    <seed value="1"/>
+
+    <!-- This block is merged into the .sumocfg when veins_launchd starts SUMO -->
+    <config>
+        <net-file value="intersection.net.xml"/>
+        <route-files value="intersection.rou.xml"/>
+        <additional-files value="intersection.poly.xml"/>   <!-- consistent name -->
+
+        <begin value="0"/>
+        <end value="200"/>               <!-- you had 100 in .sumocfg, 200 here → decide -->
+        <step-length value="0.1"/>
+
+        <!-- Important for Veins: allow controlled collisions if you want to study them -->
+        <collision.action value="warn"/>
+        <collision.check-junctions value="false"/>     <!-- usually false in Veins -->
+        <collision.mingap-factor value="0"/>
+        <collision.stoptime value="0"/>
+
+        <!-- Prevent teleporting / removing vehicles -->
+        <time-to-teleport value="-1"/>
+
+        <!-- No traffic lights in your net → can keep or remove -->
+        <tls.all-off value="true"/>
+
+        <!-- Veins needs this -->
+        <remote-port value="9999"/>
+
+        <!-- Helpful for debugging -->
+        <verbose value="true"/>
+        <no-warnings value="false"/>
+        <collision-output value="collisions.xml"/>
+    </config>
+</launch>
