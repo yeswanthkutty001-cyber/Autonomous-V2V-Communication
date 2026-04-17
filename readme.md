@@ -169,6 +169,12 @@ Simulation results are stored in each scenario's `results/` directory in OMNeT++
 | `.vci` | Vector index file for efficient `.vec` access |
 | `.rt` | Routing table snapshots (AODV scenarios) |
 
+![V2V Communication](Demo/Images/V2V_Communication.jpg)
+
+![Collision Avoidance](Demo/Images/Collision_Avoidance.jpg)
+
+![Intersection Safety](Demo/Images/Intersection_Safety.jpg)
+
 Results are analysed using the OMNeT++ Analysis Tool built into the IDE, or exported to CSV for external processing. Key metrics across scenarios include packet delivery ratio, end-to-end delay, AODV route discovery latency, and collision prevention success rate.
 
 The Intersection scenario additionally produces `collisions.xml` (SUMO output) when collision logging is enabled in `intersection.launchd.xml`, recording the exact time and position of any collision events in the baseline (`run_crash.py`) run.
